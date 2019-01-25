@@ -1,0 +1,8 @@
+1. To run a Docker Container 
+  `docker run [container-name]` E.g `docker run hello-world`
+  Docker will pull these images form docker hub if not present. Everytime a docker run command is run it wil create a new container with new id.
+  
+2. To See all the docker containers (both running and not running)
+  `docker ps -a`
+
+3. To run docker with interactive shell `docker run -ti --rm -ubuntu bash`
