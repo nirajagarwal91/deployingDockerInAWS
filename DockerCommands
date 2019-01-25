@@ -62,8 +62,7 @@
   
   22. Build Docker files `docker build -t [name-of-the-image] .` <- . is the path where the docker file is.
       `docker run --rm -ti [name-of-the-image-build]`
-      
-  23. 
+     
   
       
  
