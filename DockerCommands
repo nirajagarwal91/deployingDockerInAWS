@@ -5,4 +5,19 @@
 2. To See all the docker containers (both running and not running)
   `docker ps -a`
 
-3. To run docker with interactive shell `docker run -ti --rm -ubuntu bash`
+3. To run docker with interactive shell `docker run -ti --rm ubuntu bash`
+    --rm flag will remove the Docker container when done with it
+    --ti will give an interactive shell. In this case for ubuntu
+
+4. So what is a docker image? 
+    Docker images are minimalistic software that is installed and bundled up to run your program. For example: To run a web page on       docker, you need to install all the dependancies for the front end. 
+    
+5. Docker run command takes an image and converts it into a living running container. So any file created in the container will stay in the container. If a container is fired from the same image, created file in the previous container will not be present. 
+
+6. Docker Commit command will create images out of the containers. Any file that is created or modified in the working container can be put into an image using a docker commit command. NOTE: It will create a new image.
+  `docker commit [Container ID]` 
+  This return a SHA256 encrypted image id, which is difficult to remember. To tag now use 
+  `docker tag [SHA256 ID got from docker commit] [name of image(user value)]`
+
+7. 
+    
