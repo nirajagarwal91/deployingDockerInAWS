@@ -50,5 +50,21 @@
  17. DOCKER iMAGES `docker rmi [image_name]` to remove image
  
  18. Dokcer volume are like virtual disks. Are of two types 1. Persistent 2. Ephemeral (present only when container is in use)
+ 19.  Sharing DATA between containers
+      `docker run -ti --rm -v /home/niraj/shared-host:/shared-folder-container ubuntu bash`
+      Create a file in the container in the /shared-folder-container.
+      Once the Container exits, the file can still be seen in /home/niraj/shared-host. 
+      
+  20. Passing data from once container to another. Please Note: This is Ephemeral
+      `docker run -ti --volumes-from [volume name] ubuntu bash`
+  
+  21. `docker search [search item]` on command line. 
+  
+  22. Build Docker files `docker build -t [name-of-the-image] .` <- . is the path where the docker file is.
+      `docker run --rm -ti [name-of-the-image-build]`
+      
+  23. 
+  
+      
  
     
