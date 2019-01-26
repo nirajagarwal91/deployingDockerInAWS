@@ -83,4 +83,22 @@
   `docker run --rm -ti --net=host --privileged=true ubuntu bash`
   Install iptables on this container. Run another container that has a port open. `docker run --rm -ti -p 8080:8080 ubuntu bash` 
   
-  26. 
+  26. Mounting and unmounting directories but first need to spin up a container with --privileged=true flag
+    `mount -o bind [first-folder] [mounting-folder]`
+    This will mount the contents of first-folder on the mounting-folder. 
+    To Unmount `unmount [mounitng-folder]`
+    
+    # Mounting volume is mounitng the host file system over the guest file system
+    
+  27. Docker Registry. Listens on port 5000
+      To run Registry `docker run -d -p 5000:5000 --restart=always --name registry registry:2`
+      Using the docker push command `docker push [tag of the container]`
+      This will save the registry.
+      
+      Another cool way is to save images locally. 
+      
+      `docker save -o filename.tar.gz [imagename:tag, ...]`
+       
+       To load these images 
+       
+       `docker load -i filename.tar.gz`
