@@ -65,3 +65,22 @@
   
   22. Build Docker files `docker build -t [name-of-the-image] .` <- . is the path where the docker file is.
       `docker run --rm -ti [name-of-the-image-build]`
+      
+  23. Docker follows a client-server architecture form. It is possible to call a docker server from a docker client that 
+  resides inside a docker container. 
+  #`docker run --rm -ti -v /var/run.docker.sock:/var/run.docker.sock docker sh`
+  Here docker.sock file has the socker information for communication. The file is placed inside the new container at the same location.
+  
+  24. Docker uses ### bridges to create virtual network in your computer. 
+      `docker run --rm -ti --net=host ubuntu:16.04 bash` --net = host gives container direct access to networking.
+     In Bash `apt-get update && apt-get install bridge-utils`
+     Create a network `docker create network [netwotk-name]`
+  
+  25. It uses the built-in firewall features of the Linux kernel, namely the iptables command, to create firewall rules that control when packets get sent between the bridges and thus become available to the containers that are attached to those bridges. This whole system is commonly referred to as NAT, or Network Address Translation. That means when a packet is on its way out towards the internet, you change the source address, so it'll come back to you. And then when it's on the way back in, you change the destination address, so it looks like it came directly from the machine you were connecting to.
+  `sudo iptables -n -L -t nat`
+  How docker shares packets between containers 
+  
+  `docker run --rm -ti --net=host --privileged=true ubuntu bash`
+  Install iptables on this container. Run another container that has a port open. `docker run --rm -ti -p 8080:8080 ubuntu bash` 
+  
+  26. 
